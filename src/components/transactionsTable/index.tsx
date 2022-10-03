@@ -1,15 +1,15 @@
 import { useEffect } from "react";
+import { api } from "../../services/api";
 import { Container } from "./style";
 
-//RETORNAR-> CHAPTERII-> 01-> 03-> AULA 02
+//RETORNAR-> CHAPTERII-> 01-> 04-> AULA 04
 //link figma: https://www.figma.com/file/iLFkm80Hm9YeC0lMuasNFN/dtmoney-Ignite?node-id=0%3A1
 
 export function TransacctionsTable(){
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/transactions')
-         .then(response => response.json())
-         .then(data => console.log(data))
+        api.get('transactions')
+         .then(response => console.log(response.data))
     }, []);
 
     return(
